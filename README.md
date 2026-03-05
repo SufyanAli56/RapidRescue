@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚨 RapidRescue – Real-Time Emergency Help Platform
 
-## Getting Started
+RapidRescue is a **real-time emergency assistance platform** designed to help people quickly request help and connect with nearby volunteers during emergencies.
 
-First, run the development server:
+The platform allows users to send an emergency alert with their **live location**, and nearby volunteers can respond instantly through a **real-time notification system**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project demonstrates modern full-stack development using **real-time technologies, geolocation services, and modern web frameworks**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** Next.js (React framework), Tailwind CSS  
+- **Backend & Database:** Supabase (PostgreSQL, authentication, storage)  
+- **Real-Time Communication:** Supabase Realtime / WebSockets  
+- **Maps & Location:** OpenStreetMap, Leaflet  
+- **Deployment:** Vercel  
+- **Others:** Browser Geolocation API for capturing user location
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌍 Problem Statement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In many regions, people struggle to get immediate help during emergencies such as:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Medical emergencies
+- Accidents
+- Security threats
+- Natural disasters
 
-## Deploy on Vercel
+Traditional emergency systems are often:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Slow
+- Overloaded
+- Unavailable in rural areas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+RapidRescue aims to create a **community-powered emergency response system** where nearby volunteers can quickly respond to help requests.
+
+---
+
+## 🎯 Project Goals
+
+The goal of this project is to build a platform that:
+
+- Allows users to **send emergency alerts instantly**
+- Shares the **user's real-time location**
+- Notifies **nearby volunteers immediately**
+- Provides **live communication between users and helpers**
+- Displays emergencies on a **live map**
+
+---
+
+## 🧠 Key Features
+
+### 🚨 Emergency Alert System
+Users can press a **panic button** to instantly send an emergency alert containing:
+
+- User ID
+- Timestamp
+- Location coordinates
+- Emergency message
+
+---
+
+### 📍 Live Location Sharing
+The system captures the user's **GPS location** using the browser's geolocation API.
+
+Example:
+
+```javascript
+navigator.geolocation.getCurrentPosition((position) => {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+});
